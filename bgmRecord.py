@@ -8,6 +8,7 @@ Created on Thu Aug 22 03:48:32 2019
 from selenium import webdriver
 import json
 import pandas as pd
+import time
 
 characterId=21368
 
@@ -26,6 +27,7 @@ for i in ids:
         asklist.append([i,[k['TradeTime'] for k in askRecord], [k['Price'] for k in askRecord], [k['Amount'] for k in askRecord]])
     if bidRecord:
         bidlist.append([i,[k['TradeTime'] for k in bidRecord], [k['Price'] for k in bidRecord], [k['Amount'] for k in bidRecord]])
+    time.sleep(1)
 
 
 driver.quit()
